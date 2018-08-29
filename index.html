@@ -6,8 +6,27 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Number Guesser</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
 </head>
 <body>
-
+    <div class="container">
+        <h1>Number Guesser</h1>
+        <div id="game">
+            <p>
+                Введите номер от
+                <span class="min-num">1</span>
+                до <span class="max-num">10</span>
+            </p>
+            <input type="number" id="guess-input" placeholder="Введите ваше число">
+            <button
+                id="guess-value"
+                class="button button-primary"
+                type="submit"
+            >Угадать</button>
+            <p class="message"></p>
+        </div>
+    </div>
+<script src="js/app.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 // Game values
 let min = 1,
     max = 10,
-    winningNum = 2, // правильное число
+    winningNum = getRandomNum(min, max), // правильное число
     guessesLeft = 3; // кол-во попыток
 
 // UI Elements
@@ -15,6 +15,13 @@ const game = document.querySelector('#game'),
 // Assign UI min and max
 minNum.textContent = min;
 maxNum.textContent = max;
+
+// Play again event listener
+game.addEventListener('mousedown', function (e) {
+    if (e.target.classList.contains('play-again')) {
+        window.location.reload();
+    }
+});
 
 // Listen for guess
 guessBtn.addEventListener('click', function () {
@@ -63,6 +70,15 @@ function gameOver(won, msg) {
     message.style.color = color;
     // Set message
     setMessage(msg, color);
+
+    // Play Again?
+    guessBtn.textContent = 'Начать заново';
+    guessBtn.classList.add('play-again');
+}
+
+// Get Winning Number
+function getRandomNum(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 // Set message
